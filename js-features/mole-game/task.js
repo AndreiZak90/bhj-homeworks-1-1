@@ -6,8 +6,8 @@ let winGame = 0;
 let dedGame = 0;
 
 function newGame() {
-  let winGame = 0;
-  let dedGame = 0;
+  winGame = 0;
+  dedGame = 0;
   dead.innerHTML = winGame;
   lost.innerHTML = dedGame;
 }

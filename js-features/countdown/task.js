@@ -6,7 +6,7 @@ let timer = setInterval(() => {
   count--;
   numberTime.innerHTML = count;
   if (count <= 0) {
-    result = alert(message);
+    alert(message);
     clearInterval(timer);
   }
 }, 1000);
