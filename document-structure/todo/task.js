@@ -5,7 +5,6 @@ const add = document.getElementById("tasks__add");
 
 function valid(e) {
   e.preventDefault();
-  remInput();
   if (input.value != 0) {
     const newInp = document.createElement("div");
     newInp.classList.add("task");
@@ -20,6 +19,8 @@ function valid(e) {
     list.insertBefore(newInp, list.firstElementChild);
   }
   input.value = "";
+
+  remInput();
 }
 
 add.addEventListener("click", valid);
@@ -28,10 +29,9 @@ function remInput() {
   const remove = document.querySelectorAll(".task__remove");
   remove.forEach((el) => {
     el.addEventListener("click", dell);
+    function dell() {
+      const res = el.closest(".task");
+      res.remove();
+    }
   });
-}
-
-function dell(el) {
-  const res = el.closest("div");
-  res.remove();
 }
