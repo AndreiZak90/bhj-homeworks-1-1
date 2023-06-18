@@ -17,21 +17,11 @@ function valid(e) {
       '<a href="#" class="task__remove">&times;</a>'
     );
     list.insertBefore(newInp, list.firstElementChild);
+    newInp.lastChild.addEventListener("click", () => {
+      list.removeChild(newInp);
+    });
   }
   input.value = "";
-
-  remInput();
 }
 
 add.addEventListener("click", valid);
-
-function remInput() {
-  const remove = document.querySelectorAll(".task__remove");
-  remove.forEach((el) => {
-    el.addEventListener("click", dell);
-    function dell() {
-      const res = el.closest(".task");
-      res.remove();
-    }
-  });
-}
