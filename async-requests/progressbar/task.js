@@ -5,8 +5,8 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const xhr = new XMLHttpRequest();
 
-  xhr.upload.addEventListener("progress", (e) => {
-    const file = Math.round(e.total / e.loaded);
+  xhr.upload.addEventListener("progress", (event) => {
+    const file = Math.round(event.total / event.loaded);
     progress.value = file;
   });
   const formDATA = new FormData(form);
